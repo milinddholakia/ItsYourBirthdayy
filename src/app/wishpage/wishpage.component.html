@@ -1,0 +1,70 @@
+<html>
+
+<body class="bg">
+    <div>
+        <h1>Happy Birthday!</h1>
+        <div class="center">
+
+            <mat-card class="happy-Birthday">
+
+                <youtube-player videoId="_z-1fTlSDF0" suggestedQuality="highres" [height]="450" [width]="1000"
+                    [startSeconds]="'5'" [endSeconds]="'60'" >
+                </youtube-player>
+                <mat-card-content>
+                    <hr>
+                    <p>
+                        <q>
+                            <h2> Sending you smiles for every moment of your special day…Have a wonderful time and a
+                                very
+                                happy
+                                birthday!
+                            </h2>
+                        </q>
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div *ngFor="let item of items" class="center">
+            <mat-card>
+                <mat-card-header>
+                    <img mat-card-avatar [src]="item.profileimg">
+                    <mat-card-title>ABOUT : </mat-card-title>
+                    <mat-card-subtitle> {{item.fname}} {{item.lname}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <hr><h2 class="mat-body-strong">
+                    <p >
+                        {{item.about}}
+                    </p>
+                    Head towards gallery to wish !!  
+                </h2>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+        <div class="center">
+            <mat-card>
+                <mat-card-content>
+                    <h2 class="mat-body-strong"> Why Enjoy alone?
+
+                        <hr>
+                        Create a Google Meet meeting ..
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button mat-icon-button style="float: right;">
+                            <a href="https://meet.google.com/"  style="color: green;">
+                                <mat-icon >videocam</mat-icon>
+                            </a>
+                        </button>
+
+                    </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        
+    </div>
+</body>
+
+</html>

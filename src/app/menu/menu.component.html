@@ -1,0 +1,40 @@
+<body class="bg">
+  <app-header></app-header>
+  <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4" id="wrapper">
+
+    <mat-tab label=" CELEBRATIONS">
+      <ng-template mat-tab-label>
+        CELEBRATIONS
+
+      </ng-template>
+      <mat-tab-group mat-stretch-tabs class="tab-group">
+        <mat-tab label="Birthday Cake" class="tab-group">
+          <ng-template mat-tab-label>
+            <mat-icon>cake</mat-icon>
+
+          </ng-template>
+          <app-wishpage></app-wishpage>
+        </mat-tab>
+        <mat-tab label="Birthday Card" class="tab-group" >
+          <ng-template mat-tab-label>
+            <mat-icon >card_giftcard</mat-icon>
+
+          </ng-template>
+          <app-hovercard></app-hovercard>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="GALLERY" id="tab-group" class="tab-group">
+      <app-gallery>
+      </app-gallery>
+    </mat-tab>
+
+
+    <mat-tab label="GAMES">
+
+    </mat-tab>
+
+
+  </mat-tab-group>
+  <app-footer></app-footer>
+</body>

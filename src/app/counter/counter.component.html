@@ -1,0 +1,34 @@
+
+<body class="bg">
+    
+    
+    <div class="container" #repeat *ngIf="items?.length > 0;else noItems" >
+        
+        <ul>
+            
+            
+          
+        <div  *ngIf="!Compo()">
+            <div *ngFor="let item of items" >
+            <h1>Countdown to {{item.fname}}'s birthday:</h1>
+            </div>
+            <ul>
+                <li><span id="days">0</span><br>days</li>
+                <li><span id="hours">0</span><br>Hours</li>
+                <li><span id="minutes">0</span><br>Minutes</li>
+                <li><span id="seconds">{{second}}</span><br>Seconds</li>
+        
+            </ul>
+        </div>
+           
+        
+           
+        </ul>
+    </div>
+    <ng-template #noItems >
+        <hr>
+        <li><span >No body's Birthday is today</span></li>
+        
+    </ng-template>
+
+</body>

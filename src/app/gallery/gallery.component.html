@@ -1,0 +1,53 @@
+<body class="bg"><mat-form-field class="search-form">
+    <input matInput placeholder="Search Picture" type="text">
+  </mat-form-field>
+  <button button="submit" mat-raised-button color="primary">Search</button>
+  <br>
+  
+  <div class="parent" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" >
+        <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <span fxFlex="80%">Want to Wish??</span>
+            
+            <span style="float: right;" fxFlex="20%">
+                <mat-icon  (click)="fileUploader.click()">add_a_photo</mat-icon>
+                <input type="file"class="form-control" formControlName ="imageUrl" accept="image/*" #fileUploader (change)="showPreview($event)"  style=" visibility: hidden;">
+                <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required" style="color: red;"><h6>*</h6></div>
+            </span>   
+            </mat-card-title>
+            
+            <mat-card-content>
+                <mat-form-field class="example-full-width" fxFlex="70%" >
+                <mat-label>Leave a wish</mat-label>
+                <textarea matInput placeholder="Ex. Wishing you... -From" formControlName ="wishes"></textarea>
+                <div class="text-danger" *ngIf="isSubmitted && formControls.wishes.errors?.required">This field is Required</div>
+                </mat-form-field>
+                <button type="submit" mat-mini-fab color="primary"  fxFlex="30%">
+                    Submit
+                </button>
+            </mat-card-content>
+            <img  [src]="imgSrc" image-resizing image-Height="200px" image-Width="200px" style="max-width: 300px; max-height: 300px;">
+            <mat-form-field class="example-full-width"  >
+                <mat-label>Dear Friend</mat-label>
+                <textarea matInput placeholder="Ex. Wishing you... -From" formControlName ="from"></textarea>
+                <div class="text-danger" *ngIf="isSubmitted && formControls.from.errors?.required">This field is Required</div>
+            </mat-form-field>
+        </form>
+      </mat-card>
+
+     
+    <mat-card class="card-picture" *ngFor="let picture of images">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%">{{picture.payload.doc.data().wishes}}</span>
+        <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon>
+      </mat-card-title>
+      <img mat-card-image [src]="picture.payload.doc.data().ImageUrl" height="300rem" width="300rem">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%">{{picture.payload.doc.data().from}}</span>
+        
+      </mat-card-title>
+    </mat-card>
+  </div>
+</body>

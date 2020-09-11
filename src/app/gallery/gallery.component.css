@@ -1,0 +1,46 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  /* background-image: url("https://i.pinimg.com/originals/e4/93/ac/e493ace484af4b107fc2e9a1d1debce0.jpg"); */
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: -webkit-linear-gradient(337deg, rgb(30, 131, 139) 0%, rgb(41, 188, 196) 20%, rgb(99, 233, 236) 80%, rgb(97, 232, 235) 100%);
+background: -o-linear-gradient(337deg, rgb(30, 131, 139) 0%, rgb(41, 188, 196) 20%, rgb(99, 233, 236) 80%, rgb(97, 232, 235) 100%);
+background: -ms-linear-gradient(337deg, rgb(30, 131, 139) 0%, rgb(41, 188, 196) 20%, rgb(99, 233, 236) 80%, rgb(97, 232, 235) 100%);
+background: -moz-linear-gradient(337deg, rgb(30, 131, 139) 0%, rgb(41, 188, 196) 20%, rgb(99, 233, 236) 80%, rgb(97, 232, 235) 100%);
+background: linear-gradient(113deg, rgb(30, 131, 139) 0%, rgb(41, 188, 196) 20%, rgb(99, 233, 236) 80%, rgb(97, 232, 235) 100%);
+}
+.img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .search-form {
+    width: 90%;
+  }
+  .parent {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+    }
+    
+    .child {
+    width: 40%;
+    }
+    
