@@ -1,1 +1,144 @@
-<p>registration works!</p>
+<body class="bg">
+    <div class="container" >
+      
+
+        <form class="center" [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column" style="align-content: center;">
+                <mat-card-header >
+                    <mat-label >Welcome to the Family  :</mat-label>
+                </mat-card-header>
+            </mat-card-title>
+            <br>
+            <p></p>
+            <hr>
+            <br>
+            <p></p>
+            <mat-card-content>
+
+                <!-- Preview the Profile Picture  -->
+                <!-- <img [src]="imgSrc" image-resizing image-Height="200px" image-Width="200px"
+                    style="max-width: 300px; max-height: 300px;"> -->
+
+                <!-- <span style="float: right;" fxFlex="20%">
+
+
+
+
+                </span> -->
+                <div style="align-content: center;" style="width: 80%;">
+                    <p>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>First Name :</mat-label>
+                            <input matInput placeholder="Enter Your First Name" formControlName="fname" required>
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Example: Madhu</mat-hint>
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.fname.errors?.required">This
+                                field is
+                                Required</div>
+                            <br>
+                        </mat-form-field>
+                    </p>
+                    
+            <p></p>
+                    <p>
+                        <mat-form-field appearance="standard">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Enter Your Last Name" formControlName="lname" required>
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Example: Kiran</mat-hint>
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.lname.errors?.required">This
+                                field is
+                                Required</div>
+                        </mat-form-field>
+                    </p>
+                    <p></p>
+                    <p>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Date of Birth :</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="dob" required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.dob.errors?.required">This field
+                                is
+                                Required</div>
+                        </mat-form-field>
+                    </p>
+                    <p></p>
+                    <p>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>About You</mat-label>
+                            <textarea matInput placeholder="Ex. My hobbies are..." formControlName="about"
+                                required></textarea>
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.about.errors?.required">This
+                                field is
+                                Required</div>
+                        </mat-form-field>
+                    </p>
+                    <p></p>
+                    <p>
+                        Profile Pic: <input type="file" class="form-control" formControlName="imageUrl" accept="image/*"
+                            #fileUploader (change)="showPreview($event)" id="input-file-id">
+                        <label for="input-file-id" class="md-button md-raised md-primary" value="Choose"></label>
+                        <br>
+                    </p>
+                    <p></p>
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required"
+                        style="color: red;">
+                        
+                    </div>
+
+                </div>
+                <p>
+                    <button type="submit" fxFlex="40%" class="registerbutton"style="color: red;">
+                        REGISTER
+                    </button>
+                </p>
+                <p></p>
+            </mat-card-content>
+
+
+        </form>
+    </div>
+</body>
+<!-- <div >
+    <form>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Enter Your First Name" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Example: Madhu</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Enter Your Last Name" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Example: Kiran</mat-hint>
+            </mat-form-field>
+        </p>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>About You</mat-label>
+            <textarea matInput placeholder="Ex. My hobbies are..."></textarea>
+        </mat-form-field>
+        <p>Profile Pic: <input class="ng-hide" id="input-file-id" multiple type="file" />
+            <label for="input-file-id" class="md-button md-raised md-primary" value="Choose"></label>
+            <br>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+</div> -->

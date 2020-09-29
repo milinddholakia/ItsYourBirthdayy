@@ -19,7 +19,9 @@ export class GalleryComponent implements OnInit {
   items: Users[];
   images: Array<any>;
   currentRouter = this.router.url;
-  constructor(private storage: AngularFireStorage, private service: FireserviceService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private storage: AngularFireStorage, private service: FireserviceService, private router: Router, private activatedRoute: ActivatedRoute) {
+    
+   }
   formTemplate = new FormGroup({
     wishes: new FormControl('', Validators.required),
     imageUrl: new FormControl('', Validators.required),

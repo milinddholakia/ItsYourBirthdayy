@@ -24,14 +24,7 @@ export class FireserviceService {
   constructor(private firebase: AngularFireDatabase, public db: AngularFirestore, public afAuth: AngularFireAuth, public database: AngularFireDatabase) {
     this.items = this.db.collection('Users').valueChanges();
   }
-  // getUsers() {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.db.collection('/Users/UserDetails').snapshotChanges()
-  //     .subscribe(snapshots => {
-  //       resolve(snapshots)
-  //     })
-  //   })
-  // }
+
   getImages(wishto) {
     console.log(wishto);
     return new Promise<any>((resolve, reject) => {
@@ -52,7 +45,17 @@ export class FireserviceService {
     return this.items1;
 
   }
+  registerUser(value, url) {
+    return this.db.collection('Users').add({
+      about: value.about,
+      dob: value.dob,
+      fname: value.fname,
+      lname: value.lname,
+      proimg: url
 
+    });
+
+  }
 
 
 }

@@ -7,6 +7,7 @@ import { CounterComponent } from './counter/counter.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HovercardComponent } from './hovercard/hovercard.component';
 import { WishpageComponent } from './wishpage/wishpage.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: 'menu', component: MenuComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'wishupload', component: GalleryComponent },
   { path: 'celebcard', component: HovercardComponent },
   { path: 'celebpage', component: WishpageComponent },
+  { path: 'register', component: RegistrationComponent },
 ];
 
 @NgModule({
