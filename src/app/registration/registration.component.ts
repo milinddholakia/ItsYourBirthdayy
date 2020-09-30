@@ -57,6 +57,8 @@ export class RegistrationComponent implements OnInit {
                 fileRef.getDownloadURL().subscribe((url => {
                   formValue['imageUrl'] = url;
                   this.service.registerUser(formValue, url);
+                  alert("SuccessFully Registered :)");
+                  this.router.navigateByUrl('/menu');
                   this.resetForm();
                 }))
               })).subscribe();
@@ -80,6 +82,9 @@ export class RegistrationComponent implements OnInit {
     this.isSubmitted = false;
     this.selectedImage = null;
   }
+  btnClick= function () {
+    this.router.navigateByUrl('/menu');
+};
 }
 
 
