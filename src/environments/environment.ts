@@ -5,14 +5,8 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyASCdG0xDBwvuSut57VQugFGaRg1jI9oLw",
-    authDomain: "happybirthday-e9566.firebaseapp.com",
-    databaseURL: "https://happybirthday-e9566.firebaseio.com",
-    projectId: "happybirthday-e9566",
-    storageBucket: "happybirthday-e9566.appspot.com",
-    messagingSenderId: "728173686892",
-    appId: "1:728173686892:web:ba6bea2d5ff7c61c746849",
-    measurementId: "G-CGYC0KJXKN"
+    ${{ secrets.FIREBASE_CONFIG }}
+    //Add your Config here and Import in module.ts
   }
 };
 
